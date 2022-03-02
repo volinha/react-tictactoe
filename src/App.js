@@ -1,5 +1,6 @@
 import "./App.css";
 import styled from "styled-components";
+import Item from "./components/Item";
 
 const Wrapper = styled.div`
   display: flex;
@@ -17,35 +18,11 @@ const Board = styled.div`
 
 `;
 
-const Item = styled.div`
-  display: flex;
-  background: #44475a;
-  justify-content: center;
-  align-items: center;
-  font-size: 3em;
-  border-radius: 5px;
-  cursor: pointer;
-
-  transition: 0.1s ease all;
-
-  &:active{
-    background: #DDD;
-  }
-`;
-
 function App() {
   return (
     <Wrapper>
       <Board>
-        <Item>X</Item>
-        <Item>O</Item>
-        <Item>X</Item>
-        <Item>O</Item>
-        <Item>X</Item>
-        <Item>O</Item>
-        <Item>X</Item>
-        <Item>O</Item>
-        <Item>X</Item>
+        {Array(9).fill(<Item />)}
       </Board>
     </Wrapper>
   );
