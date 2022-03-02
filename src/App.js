@@ -1,24 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Board = styled.div`
+  display: inline-grid;
+  grid-template-rows: 100px 100px 100px;
+  grid-template-columns: 100px 100px 100px;
+  grid-gap: 8px;
+
+`;
+
+const Item = styled.div`
+  display: flex;
+  background: #44475a;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  border-radius: 5px;
+  cursor: pointer;
+
+  transition: 0.1s ease all;
+
+  &:active{
+    background: #DDD;
+  }
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      <Board>
+        <Item>X</Item>
+        <Item>O</Item>
+        <Item>X</Item>
+        <Item>O</Item>
+        <Item>X</Item>
+        <Item>O</Item>
+        <Item>X</Item>
+        <Item>O</Item>
+        <Item>X</Item>
+      </Board>
+    </Wrapper>
   );
 }
 
